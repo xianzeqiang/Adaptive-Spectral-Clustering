@@ -11,18 +11,13 @@ This repository implements the **Adaptive Spectral Clustering** method proposed 
 2. **Sparse Coding Optimization**: Integrates dictionary learning for enhanced feature representation
 3. **Symmetrized Similarity Matrix**: Ensures robustness through symmetric matrix transformation
 
-### Algorithm Workflow
-
-
 ---
 
 ## Technical Details
 
 ### 1. Pairwise Similarity Calculation
 **Gaussian Kernel with Adaptive Bandwidth**:
-$$
-S_{ij} = \exp\left(-\frac{\|X_i - X_j\|_2}{|f|}\right)
-$$
+$S_{ij} = \exp\left(-\frac{\|X_i - X_j\|_2}{|f|}\right)$
 - $X_i, X_j$: Input feature vectors
 - $f$: Cluster variance-based scaling factor
 - Symmetrization: $S = \frac{S + S^T}{2}$
@@ -76,11 +71,9 @@ The following parameters control the behavior of the adaptive spectral clusterin
 | Parameter         | Description                                                                 | Default  | Type    |
 |-------------------|-----------------------------------------------------------------------------|----------|---------|
 | `n_clusters`      | Target number of clusters to form                                           | Required | int     |
-| `max_iter`        | Maximum number of optimization iterations                                   | 10       | int     |
-| `tol`             | Convergence tolerance for variance changes between iterations               | 1e-4     | float   |
+| `eigen_tol`             | Convergence tolerance for variance changes between iterations               | auto     | float   |
 | `random_state`    | Seed for random number generation (controls spectral initialization)        | None     | int     |
-| `kernel_gamma`    | Initial bandwidth parameter for Gaussian kernel (adaptive scaling factor)   | 1.0      | float   |
-| `sparsity_lambda` | Regularization strength for sparse coding optimization                      | 0.1      | float   |
+| `affinity`    | Precomputed affinity matrix (shape=(n_samples, n_samples)) <br/>or distance metric identifier (e.g., 'euclidean', 'precomputed')  | 'rbf'      | {array-like, sparse matrix, str}   |
 
 ---
 
