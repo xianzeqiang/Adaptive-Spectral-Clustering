@@ -91,3 +91,7 @@ flowchart TD
     G --> C
     F -->|Yes| H[Final Spectral Clustering]
     H --> I[Output Labels]
+```
+## Environmental configuration
+The experimental setup in this study is as follows: Core i7-9750H 2.60GHz CPU, NVIDIA GeForce GTX 1650 4GB GPU, 16GB RAM, 1TB SSD, and Windows 10 operating system. The compound data used in the experiments were obtained from the publicly available PubChem database, with 1-naphthol selected as the target molecule.
+The Python compiler version we used is Python 3.8.
