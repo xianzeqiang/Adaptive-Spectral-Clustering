@@ -85,11 +85,11 @@ flowchart TD
     A[Start] --> B[Initialize Parameters]
     B --> C[Build Initial Similarity Matrix]
     C --> D[Learn Dictionary Representation]
-    D --> E[Calculate Cluster Variance]
-    E --> F{Converged?}
-    F -->|No| G[Update Kernel Scaling]
-    G --> C
-    F -->|Yes| H[Final Spectral Clustering]
+    D --> E{Converged?}
+    E -->|No| F[Update Kernel Scaling]
+    F --> C
+    E --> |Yes|G[Calculate Cluster Variance]
+    G --> H[Final Spectral Clustering]
     H --> I[Output Labels]
 ```
 ## Environmental configuration
