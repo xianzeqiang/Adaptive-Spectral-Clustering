@@ -83,12 +83,12 @@ The following parameters control the behavior of the adaptive spectral clusterin
 ```mermaid
 flowchart TD
     A[Start] --> B[Initialize Parameters]
-    B --> C[Build Initial Similarity Matrix]
+    B --> C[Build Initial Similarity Matrix and Initial Spectral Clustering]
     C --> D[Learn Dictionary Representation]
     D --> E{Converged?}
     E -->|No| F[Update Kernel Scaling]
     F --> C
-    E --> |Yes|G[Calculate Cluster Variance]
+    E --> |Yes|G[Calculate Cluster Variance and Build Final Similarity Matrix]
     G --> H[Final Spectral Clustering]
     H --> I[Output Labels]
 ```
